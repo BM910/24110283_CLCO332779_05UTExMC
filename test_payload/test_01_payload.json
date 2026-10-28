@@ -1,0 +1,10 @@
+{
+    "eventId": "evt-001",
+    "orderId": "ord-001",
+    "customer": "24110283@student.hcmute.edu.vn",
+    "amount": "50000",
+    "items": {
+        "itemId" : "hw-001",
+        "quantity" : 2
+    }
+}
