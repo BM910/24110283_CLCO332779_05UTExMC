@@ -72,7 +72,7 @@ Owner = 24110283-BDPL
 ```
 
 ## 3. Vẽ sơ đồ
-<p align="center"><img src="draw_so_do.jpg" alt="Sơ đồ"></p>
+![alt text](draw_so_do.jpg)
 
 ## 4. Dựng nền tảng
 ### Tạo order-events-topic
@@ -181,4 +181,25 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 - email-queue có 2 tin nhắn
 - inventory-queue có 2 tin nhắn
 - payment-queue có 1 tin nhắn
+
 ![alt text](receive_message_filter_queue_list.png)
+
+## Links
+- Repo: https://github.com/BM910/24110283_CLCO332779_05UTExMC
+- File báo cáo: https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/main/tuan_01/bao_cao_tuan_1.md
+- Sơ đồ kiến trúc: https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/main/tuan_01/draw_so_do.jpg
+- Commits:
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/36206c43617d3c388437d8a10757718fa12e535c
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/859b6ee19591f4424c6325a22ea0886c3e380726
+- Ảnh:
+    - [create_queue.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/create_queue.png)
+    - [create_subscription.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/create_subscription.png)
+    - [create_topic.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/create_topic.png)
+    - [draw_so_do.jpg](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/draw_so_do.jpg)
+    - [publish_message_success.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/publish_message_success.png)
+    - [receive_message_body.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_body.png)
+    - [receive_message_filter_queue_list.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_filter_queue_list.png)
+    - [receive_message_inventory_queue.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_inventory_queue.png)
+
+## Kế hoạch tuần 2
+Triển khai chức năng lõi và kiểm thử từng thành phần: ba Lambda consumer dùng LabRole với concurrency trong giới hạn 10, tạo DLQ cho ba queue, và kịch bản kiểm thử các tổ hợp filter.
