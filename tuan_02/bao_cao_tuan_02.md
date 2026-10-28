@@ -52,7 +52,8 @@ Owner = 24110283-BDPL
 
 ![alt text](config_event_function_code.png)
 
-- Add triggers: `Source: SQS` `SQS queue: inventory-queue/payment-queue/email-queue` gắn hàm lambda vào queue tương ứng và sẽ hàm sẽ được gọi khi queue có tin nhắn
+- Add triggers: `Source: SQS` `SQS queue: inventory-queue/payment-queue/email-queue` `Maximum concurrency: 3`
+- Gắn hàm lambda vào queue tương ứng và sẽ hàm sẽ được gọi khi queue có tin nhắn
 
 ![alt text](config_event_source_mapping.png)
 
@@ -138,6 +139,10 @@ Owner = 24110283-BDPL
 
 ![alt text](view_queue_02.png)
 
+- Error metric cho thấy 3 event function gặp lỗi tổng 9 lần
+
+![alt text](metric_test_03.png)
+
 #### CloudWatch > Log management
 #### inventory-consumer
 ![alt text](log_inventory_03.png)
@@ -147,3 +152,6 @@ Owner = 24110283-BDPL
 
 #### email-consumer
 ![alt text](log_email_03.png)
+
+## Kế hoạch tuần 3
+Tích hợp DynamoDB, bảo mật, giám sát (CloudWatch) tạo alarm của dead letter queue.
