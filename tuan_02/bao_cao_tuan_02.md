@@ -32,7 +32,7 @@ Owner = 24110283-BDPL
 #### Amazon SQS > Queues > inventory-queue/payment-queue/email-queue > Edit
 - Dead-letter queue: Enable
 - Choose queue: chọn ARN dlq tương ứng
-- Maximum receives: `3` cho phép tin nhắn bị lỗi khi gọi lambda được nhận lại vào queue tối đa 3 lần, sau 3 lần đẽ được đưa vào dead letter queue
+- Maximum receives: `3` cho phép tin nhắn bị lỗi khi gọi lambda được nhận lại vào queue tối đa 3 lần, sau 3 lần sẽ được đưa vào dead letter queue
 
 ### Tạo và gắn lambda inventory-consumer/payment-consumer/email-consumer
 #### Code inventory_consumer/payment_consumer/email_consumer
@@ -52,7 +52,7 @@ Owner = 24110283-BDPL
 
 ![alt text](config_event_function_code.png)
 
-- Add triggers: `Source: SQS` `SQS queue: inventory-queue/payment-queue/email-queue` `Maximum concurrency: 3`
+- Add triggers: `Source: SQS` `SQS queue: inventory-queue/payment-queue/email-queue` `Batch size: 1` `Maximum concurrency: 3`
 - Gắn hàm lambda vào queue tương ứng và sẽ hàm sẽ được gọi khi queue có tin nhắn
 
 ![alt text](config_event_source_mapping.png)
@@ -152,6 +152,41 @@ Owner = 24110283-BDPL
 
 #### email-consumer
 ![alt text](log_email_03.png)
+
+## Links
+- [Repo](https://github.com/BM910/24110283_CLCO332779_05UTExMC)
+- [File báo cáo](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/1914a114b0b35a8b64f9c0c737d569277a6894dd/tuan_02/bao_cao_tuan_02.md)
+- Commits:
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/11a8826d53f927fa196162d85bf18cd41ecbca97
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/0ec079c9fe28e7f4dd299a8bf0442d28bcb3db55
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/e18245070d42390acf12bc0314a6872a05c8f62f
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/1914a114b0b35a8b64f9c0c737d569277a6894dd
+- Ảnh:
+    - [config_event_function_code.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/config_event_function_code.png)
+    - [config_event_source_mapping.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/config_event_source_mapping.png)
+    - [create_event_functions.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/create_event_functions.png)
+    - [log_email_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_email_01.png)
+    - [log_email_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_email_02.png)
+    - [log_email_03.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_email_03.png)
+    - [log_inventory_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_inventory_01.png)
+    - [log_inventory_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_inventory_02.png)
+    - [log_inventory_03.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_inventory_03.png)
+    - [log_payment_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_payment_01.png)
+    - [log_payment_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_payment_02.png)
+    - [log_payment_03.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/log_payment_03.png)
+    - [view_queue_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/view_queue_01.png)
+    - [view_queue_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/702525bbe7ca2b7ec0f2dceb60d0b972df7e76b7/tuan_02/view_queue_02.png)
+    - [metric_test_03.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/e18245070d42390acf12bc0314a6872a05c8f62f/tuan_02/metric_test_03.png)
+- Code:
+    - [test_03_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_03_payload.json)
+    - [test_02_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_02_payload.json)
+    - [test_01_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_01_payload.json)
+    - [payment_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/payment_consumer.py)
+    - [inventory_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/inventory_consumer.py)
+    - [email_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/email_consumer.py)
+
+## Sử dụng AI: Không sử dụng
 
 ## Kế hoạch tuần 3
 Tích hợp DynamoDB, bảo mật, giám sát (CloudWatch) tạo alarm của dead letter queue.

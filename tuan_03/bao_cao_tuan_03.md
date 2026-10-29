@@ -172,6 +172,7 @@ Tin nhắn được gửi đến ba queue, xử lý không thành công và đư
 - Commits:
     - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/38a88e950c9762f8536a2fa9869cfd89880af8e1
     - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/9b35debde38daab49a8a2cfd4cd8bcce7378a881
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/8cd386c17a138e773baa4c1d9f7faade918ed17c
 - Ảnh:
     - [alarm_red.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/alarm_red.png)
     - [alert_email_content.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/alert_email_content.png)

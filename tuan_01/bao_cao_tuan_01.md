@@ -2,13 +2,14 @@
 # Tuần 1
 ## Worklog
 - Tìm hiểu dịch vụ: 3 tiếng
-- Đọc [What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
-- Đọc [Amazon SNS message filtering](https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html)
-- Đọc [What is Amazon Simple Queue Service?](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
-- Đọc [Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
-- Đọc [Tutorial: Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs-example.html)
-- Xem [AWS Fan-Out Pattern: Amazon SNS + Amazon SQS Setup](https://www.youtube.com/watch?v=h8OUc38eKi4)
-- Vẽ sơ đồ dùng [app.diagrams.net](https://app.diagrams.net/): 15 phút
+    - Đọc [What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+    - Đọc [Amazon SNS message filtering](https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html)
+    - Đọc [What is Amazon Simple Queue Service?](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
+    - Đọc [Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
+    - Đọc [Tutorial: Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs-example.html)
+    - Xem [AWS Fan-Out Pattern: Amazon SNS + Amazon SQS Setup](https://www.youtube.com/watch?v=h8OUc38eKi4)
+    - Vẽ sơ đồ dùng [app.diagrams.net](https://app.diagrams.net/): 15 phút
+
 - Thiết kế kiến trúc: 5 tiếng
 
 ## 1. Tìm hiểu dịch vụ
@@ -16,6 +17,7 @@
 - SNS message filtering: Thay vì nhận mọi tin nhắn từ topic, dùng filter để lọc và chỉ lấy những tin nhắn cần thiết. SNS so sánh cấu trúc giữa tin nhắn và filter nếu hai bên giống nhau, subscriber nhận tin nhắn đó. Nếu subscriber không có filter, nó nhận mọi tin nhắn từ topic.
 - SQS (Simple Queue Service) là dịch vụ hàng đợi tin nhắn. Giữ tin nhắn để consumer dùng.
 - Fan-out là khi ta sử dụng SNS để gửi tin nhắn đến nhiều endpoint. Một consumer bị chậm/lỗi không ảnh hướng tới các consumer khác. Có thể mở rộng lên đến hàng triệu subscriber.
+
 ## 2. Thiết kế kiến trúc
 ### Đặt tên:
 ```
@@ -76,7 +78,7 @@ Owner = 24110283-BDPL
 
 ## 4. Dựng nền tảng
 ### Tạo order-events-topic
-- Amazon SNS > Topics > Create topic
+#### Amazon SNS > Topics > Create topic
 - Type: standard
 - Name: order-events-topic
 - Tags:
@@ -90,7 +92,7 @@ Owner = 24110283-BDPL
 ![alt text](create_topic.png)
 
 ### Tạo inventory-queue, payment-queue, email-queue
-- Amazon SQS > Queues > Create queue
+#### Amazon SQS > Queues > Create queue
 - Type: Standard
 - Name: inventory-queue, payment-queue, email-queue
 - Tags:
@@ -109,7 +111,7 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 ![alt text](create_queue.png)
 
 ### Tạo subscription cho các queue
-- Amazon SNS > Topics > order-events-topic > Create subscription
+#### Amazon SNS > Topics > order-events-topic > Create subscription
 - Topic ARN: `arn:aws:sns:us-east-1:243732139211:order-events-topic`
 - Protocol: Amazon SQS
 - Endpoint:
@@ -125,7 +127,7 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 
 ### Kiểm tra
 #### Publish tin nhắn
-- Amazon SNS > Topics > order-events-topic > Publish message
+#### Amazon SNS > Topics > order-events-topic > Publish message
 - Subject: Test
 - Message body to send to the endpoint:
 ``` json
@@ -143,7 +145,7 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 ![alt text](publish_message_success.png)
 
 #### Nhận tin nhắn
-- Amazon SQS > Queues > inventory-queue, payment-queue, email-queue > Send and receive messages
+#### Amazon SQS > Queues > inventory-queue, payment-queue, email-queue > Send and receive messages
 - Kiểm tra thấy cả ba queue nhận được tin nhắn thành công
 
 ![alt text](receive_message_inventory_queue.png)
@@ -153,13 +155,13 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 ![alt text](receive_message_body.png)
 
 ### Tạo filter
-- Amazon SNS > Subscription > Chọn subcription tương ứng > Edit
+#### Amazon SNS > Subscription > Chọn subcription tương ứng > Edit
 - Subscription filter policy
 - Dùng Message attributes
 - Dán filter tương ứng vào JSON editor
 
 ### Kiểm tra
-- Amazon SNS > Topics > order-events-topic > Publish message
+#### Amazon SNS > Topics > order-events-topic > Publish message
 - Subject: Test Filter
 - Message body to send to the endpoint:
 ``` json
@@ -191,6 +193,7 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 - Commits:
     - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/36206c43617d3c388437d8a10757718fa12e535c
     - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/859b6ee19591f4424c6325a22ea0886c3e380726
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/74eca597e022d5d39b49135ac65be0e17b4ee3f5
 - Ảnh:
     - [create_queue.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/create_queue.png)
     - [create_subscription.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/create_subscription.png)
@@ -200,6 +203,8 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
     - [receive_message_body.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_body.png)
     - [receive_message_filter_queue_list.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_filter_queue_list.png)
     - [receive_message_inventory_queue.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/859b6ee19591f4424c6325a22ea0886c3e380726/tuan_01/receive_message_inventory_queue.png)
+
+## Sử dụng AI: Không sử dụng
 
 ## Kế hoạch tuần 2
 Triển khai chức năng lõi và kiểm thử từng thành phần: ba Lambda consumer dùng LabRole với concurrency trong giới hạn 10, tạo DLQ cho ba queue, và kịch bản kiểm thử các tổ hợp filter.
