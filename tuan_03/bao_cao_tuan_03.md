@@ -162,7 +162,42 @@ Tin nhắn được gửi đến ba queue, xử lý không thành công và đư
     - Update replace policy: Delete
     - Add scanned resources: SNS Topic, SNS Subscription, SQS Queue, Lambda Function, Lambda EventSourceMapping, CloudWatch Alarm, DynamoDB Table
 
+- [File template](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/template/fanout-sns-sqs-iac-template-1793280969643.json)
+
 ![IaC template đã tạo](iac_template.png)
+
+## Links
+- [Repo](https://github.com/BM910/24110283_CLCO332779_05UTExMC)
+- [File báo cáo](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/bao_cao_tuan_03.md)
+- Commits:
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/38a88e950c9762f8536a2fa9869cfd89880af8e1
+    - https://github.com/BM910/24110283_CLCO332779_05UTExMC/commit/9b35debde38daab49a8a2cfd4cd8bcce7378a881
+- Ảnh:
+    - [alarm_red.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/alarm_red.png)
+    - [alert_email_content.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/alert_email_content.png)
+    - [alert_emails.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/alert_emails.png)
+    - [create_alarms.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/create_alarms.png)
+    - [create_item_test_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/create_item_test_01.png)
+    - [create_item_test_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/create_item_test_02.png)
+    - [create_table.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/create_table.png)
+    - [dynamo_test_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/dynamo_test_01.png)
+    - [dynamo_test_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/dynamo_test_02.png)
+    - [iac_template.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/iac_template.png)
+    - [queue_encryption_and_access.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/queue_encryption_and_access.png)
+    - [subscription_confirm_01.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/subscription_confirm_01.png)
+    - [subscription_confirm_02.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/subscription_confirm_02.png)
+    - [subscription_confirm_03.png](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/tuan_03/subscription_confirm_03.png)
+- Code:
+    - [test_03_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_03_payload.json)
+    - [test_02_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_02_payload.json)
+    - [test_01_payload.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/test_payload/test_01_payload.json)
+    - [fanout-sns-sqs-iac-template-1793280969643.json](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/template/fanout-sns-sqs-iac-template-1793280969643.json)
+    - [payment_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/payment_consumer.py)
+    - [inventory_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/inventory_consumer.py)
+    - [email_consumer.py](https://github.com/BM910/24110283_CLCO332779_05UTExMC/blob/9b35debde38daab49a8a2cfd4cd8bcce7378a881/lambda/email_consumer.py)
+
+
+## Sử dụng AI: Không sử dụng
 
 ## Kế hoạch tuần 4
 Kiểm thử tổng thể, tối ưu chi phí, dọn dẹp tài nguyên, viết báo cáo và demo (dưới 10 phút)
