@@ -1,0 +1,865 @@
+{
+  "Metadata": {
+    "AWSToolsMetrics": {
+      "IaC_Generator": "arn:aws:cloudformation:us-east-1:243732139211:generatedTemplate/2191f38d-ed5e-4192-814f-3722909a4ce9"
+    }
+  },
+  "Parameters": {
+    "LambdaFunctionInventoryconsumerCodeZipFileRsF5O": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "(Node.js and Python) The source code of your Lambda function. If you include your function source inline with this parameter, CFN places it in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html). This zip file cannot exceed 4MB. For the ``Handler`` property, the first part of the handler identifier must be ``index``. For example, ``index.handler``.\n  When you specify source code inline for a Node.js function, the ``index`` file that CFN creates uses the extension ``.js``. This means that Node.js treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js can automatically detect if a ``.js`` file should be treated as CommonJS or as an ES module. To enable auto-detection, add the ``--experimental-detect-module`` flag to the ``NODE_OPTIONS`` environment variable. For more information, see [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n   For JSON, you must escape quotes and special characters such as newline (``\\n``) with a backslash.\n If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html)) that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html) for details."
+    },
+    "LambdaFunctionInventoryconsumerCodeSourceKMSKeyArntlUbL": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The ARN of the KMSlong (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an [owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)."
+    },
+    "LambdaFunctionPaymentconsumerCodeSourceKMSKeyArn0mO2p": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The ARN of the KMSlong (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an [owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)."
+    },
+    "LambdaFunctionEmailconsumerCodeS3ObjectVersion6rY1a": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "For versioned objects, the version of the deployment package object to use."
+    },
+    "LambdaFunctionEmailconsumerCodeSourceKMSKeyArnoJVt8": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The ARN of the KMSlong (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an [owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)."
+    },
+    "LambdaFunctionPaymentconsumerCodeS3ObjectVersionyaFhX": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "For versioned objects, the version of the deployment package object to use."
+    },
+    "LambdaFunctionInventoryconsumerCodeImageUriEtYtY": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the Amazon ECR registry."
+    },
+    "LambdaFunctionPaymentconsumerCodeS3BucketRHDGT": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "An Amazon S3 bucket in the same AWS-Region as your function. The bucket can be in a different AWS-account."
+    },
+    "LambdaFunctionEmailconsumerCodeImageUriNwuV3": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the Amazon ECR registry."
+    },
+    "LambdaFunctionInventoryconsumerCodeS3ObjectStorageModeM8dyQ": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "Specifies the storage mode for the deployment package. Use ``COPY`` to store the package in LAMlong-managed storage. Use ``REFERENCE`` to read the package directly from the Amazon S3 bucket. If omitted, the default is ``COPY``.Possible values: [COPY, REFERENCE]\nThis property can be replaced with other types"
+    },
+    "LambdaFunctionPaymentconsumerCodeZipFileRW8kR": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "(Node.js and Python) The source code of your Lambda function. If you include your function source inline with this parameter, CFN places it in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html). This zip file cannot exceed 4MB. For the ``Handler`` property, the first part of the handler identifier must be ``index``. For example, ``index.handler``.\n  When you specify source code inline for a Node.js function, the ``index`` file that CFN creates uses the extension ``.js``. This means that Node.js treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js can automatically detect if a ``.js`` file should be treated as CommonJS or as an ES module. To enable auto-detection, add the ``--experimental-detect-module`` flag to the ``NODE_OPTIONS`` environment variable. For more information, see [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n   For JSON, you must escape quotes and special characters such as newline (``\\n``) with a backslash.\n If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html)) that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html) for details."
+    },
+    "LambdaFunctionPaymentconsumerCodeS3KeyoWZhi": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The Amazon S3 key of the deployment package."
+    },
+    "LambdaFunctionInventoryconsumerCodeS3ObjectVersionu0pd6": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "For versioned objects, the version of the deployment package object to use."
+    },
+    "LambdaFunctionPaymentconsumerCodeImageUriifrf5": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the Amazon ECR registry."
+    },
+    "LambdaFunctionEmailconsumerCodeS3KeyIFKxR": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The Amazon S3 key of the deployment package."
+    },
+    "LambdaFunctionEmailconsumerCodeS3ObjectStorageModeCp9Ib": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "Specifies the storage mode for the deployment package. Use ``COPY`` to store the package in LAMlong-managed storage. Use ``REFERENCE`` to read the package directly from the Amazon S3 bucket. If omitted, the default is ``COPY``.Possible values: [COPY, REFERENCE]\nThis property can be replaced with other types"
+    },
+    "LambdaFunctionInventoryconsumerCodeS3KeyQ5cAS": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "The Amazon S3 key of the deployment package."
+    },
+    "LambdaFunctionInventoryconsumerCodeS3Bucketn0xUX": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "An Amazon S3 bucket in the same AWS-Region as your function. The bucket can be in a different AWS-account."
+    },
+    "LambdaFunctionEmailconsumerCodeS3BucketyufOh": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "An Amazon S3 bucket in the same AWS-Region as your function. The bucket can be in a different AWS-account."
+    },
+    "LambdaFunctionEmailconsumerCodeZipFile9M8aa": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "(Node.js and Python) The source code of your Lambda function. If you include your function source inline with this parameter, CFN places it in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html). This zip file cannot exceed 4MB. For the ``Handler`` property, the first part of the handler identifier must be ``index``. For example, ``index.handler``.\n  When you specify source code inline for a Node.js function, the ``index`` file that CFN creates uses the extension ``.js``. This means that Node.js treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js can automatically detect if a ``.js`` file should be treated as CommonJS or as an ES module. To enable auto-detection, add the ``--experimental-detect-module`` flag to the ``NODE_OPTIONS`` environment variable. For more information, see [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n   For JSON, you must escape quotes and special characters such as newline (``\\n``) with a backslash.\n If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html)) that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html) for details."
+    },
+    "LambdaFunctionPaymentconsumerCodeS3ObjectStorageModeMIRMh": {
+      "NoEcho": "true",
+      "Type": "String",
+      "Description": "Specifies the storage mode for the deployment package. Use ``COPY`` to store the package in LAMlong-managed storage. Use ``REFERENCE`` to read the package directly from the Amazon S3 bucket. If omitted, the default is ``COPY``.Possible values: [COPY, REFERENCE]\nThis property can be replaced with other types"
+    }
+  },
+  "Resources": {
+    "SQSQueueEmaildlq": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "email-dlq",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "LambdaFunctionInventoryconsumer": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::Function",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "MemorySize": 128,
+        "Description": "",
+        "TracingConfig": {
+          "Mode": "PassThrough"
+        },
+        "Timeout": 3,
+        "RuntimeManagementConfig": {
+          "UpdateRuntimeOn": "Auto"
+        },
+        "Handler": "lambda_function.lambda_handler",
+        "Code": {
+          "SourceKMSKeyArn": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeSourceKMSKeyArntlUbL"
+          },
+          "S3ObjectVersion": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeS3ObjectVersionu0pd6"
+          },
+          "S3Bucket": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeS3Bucketn0xUX"
+          },
+          "ZipFile": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeZipFileRsF5O"
+          },
+          "S3Key": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeS3KeyQ5cAS"
+          },
+          "S3ObjectStorageMode": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeS3ObjectStorageModeM8dyQ"
+          },
+          "ImageUri": {
+            "Ref": "LambdaFunctionInventoryconsumerCodeImageUriEtYtY"
+          }
+        },
+        "Role": "arn:aws:iam::243732139211:role/LabRole",
+        "FileSystemConfigs": [],
+        "FunctionName": "inventory-consumer",
+        "Runtime": "python3.14",
+        "PackageType": "Zip",
+        "LoggingConfig": {
+          "LogFormat": "Text",
+          "LogGroup": "/aws/lambda/inventory-consumer"
+        },
+        "RecursiveLoop": "Terminate",
+        "EphemeralStorage": {
+          "Size": 512
+        },
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Architectures": [
+          "x86_64"
+        ]
+      }
+    },
+    "SNSSubscriptionConsumerdqlalert793585b5d824471fbed2379aa0e54ea5": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Subscription",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "RawMessageDelivery": false,
+        "Endpoint": "24110283@student.hcmute.edu.vn",
+        "TopicArn": "arn:aws:sns:us-east-1:243732139211:consumer-dql-alert",
+        "Protocol": "email"
+      }
+    },
+    "SNSTopicConsumerdqlalert": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Topic",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "TracingConfig": "PassThrough",
+        "MaximumMessageSize": 262144,
+        "FifoTopic": false,
+        "Subscription": [
+          {
+            "Endpoint": "24110283@student.hcmute.edu.vn",
+            "Protocol": "email"
+          }
+        ],
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283_BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "ArchivePolicy": {},
+        "TopicName": "consumer-dql-alert"
+      }
+    },
+    "SQSQueuePaymentqueue": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "RedrivePolicy": {
+          "deadLetterTargetArn": "arn:aws:sqs:us-east-1:243732139211:payment-dlq",
+          "maxReceiveCount": 3
+        },
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "payment-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "LambdaEventSourceMapping": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "BatchSize": 1,
+        "FunctionName": "arn:aws:lambda:us-east-1:243732139211:function:payment-consumer",
+        "ScalingConfig": {
+          "MaximumConcurrency": 3
+        },
+        "Enabled": true,
+        "EventSourceArn": "arn:aws:sqs:us-east-1:243732139211:payment-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "MetricsConfig": {
+          "Metrics": []
+        },
+        "MaximumBatchingWindowInSeconds": 0
+      }
+    },
+    "SNSSubscriptionOrdereventstopic8b314f6661e44d9aae7aa00db6cae17f": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Subscription",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "RawMessageDelivery": false,
+        "FilterPolicyScope": "MessageAttributes",
+        "Endpoint": "arn:aws:sqs:us-east-1:243732139211:inventory-queue",
+        "FilterPolicy": {
+          "eventType": [
+            "ORDER_CREATED",
+            "ORDER_CANCELLED"
+          ]
+        },
+        "TopicArn": "arn:aws:sns:us-east-1:243732139211:order-events-topic",
+        "Protocol": "sqs"
+      }
+    },
+    "DynamoDBTableOrderprocessingtable": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::DynamoDB::Table",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SSESpecification": {
+          "SSEEnabled": false
+        },
+        "TableName": "order-processing-table",
+        "AttributeDefinitions": [
+          {
+            "AttributeType": "S",
+            "AttributeName": "consumer"
+          },
+          {
+            "AttributeType": "S",
+            "AttributeName": "eventId"
+          }
+        ],
+        "ContributorInsightsSpecification": {
+          "Enabled": false
+        },
+        "BillingMode": "PAY_PER_REQUEST",
+        "PointInTimeRecoverySpecification": {
+          "PointInTimeRecoveryEnabled": false
+        },
+        "WarmThroughput": {
+          "ReadUnitsPerSecond": 12000,
+          "WriteUnitsPerSecond": 4000
+        },
+        "KeySchema": [
+          {
+            "KeyType": "HASH",
+            "AttributeName": "eventId"
+          },
+          {
+            "KeyType": "RANGE",
+            "AttributeName": "consumer"
+          }
+        ],
+        "DeletionProtectionEnabled": false,
+        "TableClass": "STANDARD",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "TimeToLiveSpecification": {
+          "Enabled": false
+        }
+      }
+    },
+    "LambdaEventSourceMappingTC": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "BatchSize": 1,
+        "FunctionName": "arn:aws:lambda:us-east-1:243732139211:function:email-consumer",
+        "ScalingConfig": {
+          "MaximumConcurrency": 3
+        },
+        "Enabled": true,
+        "EventSourceArn": "arn:aws:sqs:us-east-1:243732139211:email-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "MetricsConfig": {
+          "Metrics": []
+        },
+        "MaximumBatchingWindowInSeconds": 0
+      }
+    },
+    "SNSSubscriptionOrdereventstopic859cceaaf51e4d60a54af95139f58cd7": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Subscription",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "RawMessageDelivery": false,
+        "FilterPolicyScope": "MessageAttributes",
+        "Endpoint": "arn:aws:sqs:us-east-1:243732139211:payment-queue",
+        "FilterPolicy": {
+          "paymentMethod": [
+            "CARD",
+            "MOMO"
+          ],
+          "eventType": [
+            "ORDER_CREATED",
+            "ORDER_CANCELLED"
+          ]
+        },
+        "TopicArn": "arn:aws:sns:us-east-1:243732139211:order-events-topic",
+        "Protocol": "sqs"
+      }
+    },
+    "SQSQueueInventoryqueue": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "RedrivePolicy": {
+          "deadLetterTargetArn": "arn:aws:sqs:us-east-1:243732139211:inventory-dlq",
+          "maxReceiveCount": 3
+        },
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "inventory-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "LambdaFunctionPaymentconsumer": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::Function",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "MemorySize": 128,
+        "Description": "",
+        "TracingConfig": {
+          "Mode": "PassThrough"
+        },
+        "Timeout": 3,
+        "RuntimeManagementConfig": {
+          "UpdateRuntimeOn": "Auto"
+        },
+        "Handler": "lambda_function.lambda_handler",
+        "Code": {
+          "SourceKMSKeyArn": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeSourceKMSKeyArn0mO2p"
+          },
+          "S3ObjectVersion": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeS3ObjectVersionyaFhX"
+          },
+          "S3Bucket": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeS3BucketRHDGT"
+          },
+          "ZipFile": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeZipFileRW8kR"
+          },
+          "S3Key": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeS3KeyoWZhi"
+          },
+          "S3ObjectStorageMode": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeS3ObjectStorageModeMIRMh"
+          },
+          "ImageUri": {
+            "Ref": "LambdaFunctionPaymentconsumerCodeImageUriifrf5"
+          }
+        },
+        "Role": "arn:aws:iam::243732139211:role/LabRole",
+        "FileSystemConfigs": [],
+        "FunctionName": "payment-consumer",
+        "Runtime": "python3.14",
+        "PackageType": "Zip",
+        "LoggingConfig": {
+          "LogFormat": "Text",
+          "LogGroup": "/aws/lambda/payment-consumer"
+        },
+        "RecursiveLoop": "Terminate",
+        "EphemeralStorage": {
+          "Size": 512
+        },
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Architectures": [
+          "x86_64"
+        ]
+      }
+    },
+    "SQSQueuePaymentdlq": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "payment-dlq",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "CloudWatchAlarmInventorydlqalert": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::CloudWatch::Alarm",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "TreatMissingData": "notBreaching",
+        "Dimensions": [
+          {
+            "Value": "inventory-dlq",
+            "Name": "QueueName"
+          }
+        ],
+        "Period": 60,
+        "EvaluationPeriods": 1,
+        "Namespace": "AWS/SQS",
+        "OKActions": [],
+        "AlarmActions": [
+          "arn:aws:sns:us-east-1:243732139211:consumer-dql-alert"
+        ],
+        "MetricName": "ApproximateNumberOfMessagesVisible",
+        "ActionsEnabled": true,
+        "AlarmDescription": "inventory-dlq has message",
+        "AlarmName": "inventory-dlq-alert",
+        "Statistic": "Sum",
+        "InsufficientDataActions": [],
+        "DatapointsToAlarm": 1,
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Threshold": 1
+      }
+    },
+    "SNSTopicOrdereventstopic": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Topic",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "TracingConfig": "PassThrough",
+        "MaximumMessageSize": 262144,
+        "FifoTopic": false,
+        "Subscription": [
+          {
+            "Endpoint": "arn:aws:sqs:us-east-1:243732139211:payment-queue",
+            "Protocol": "sqs"
+          },
+          {
+            "Endpoint": "arn:aws:sqs:us-east-1:243732139211:email-queue",
+            "Protocol": "sqs"
+          },
+          {
+            "Endpoint": "arn:aws:sqs:us-east-1:243732139211:inventory-queue",
+            "Protocol": "sqs"
+          }
+        ],
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "ArchivePolicy": {},
+        "TopicName": "order-events-topic"
+      }
+    },
+    "SQSQueueInventorydlq": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "inventory-dlq",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "SNSSubscriptionOrdereventstopicd7bbbae2e5b546fdb7bf7135bdef7f75": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SNS::Subscription",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "RawMessageDelivery": false,
+        "FilterPolicyScope": "MessageAttributes",
+        "Endpoint": "arn:aws:sqs:us-east-1:243732139211:email-queue",
+        "FilterPolicy": {
+          "eventType": [
+            "ORDER_CREATED",
+            "ORDER_CANCELLED",
+            "ORDER_SHIPPED"
+          ]
+        },
+        "TopicArn": "arn:aws:sns:us-east-1:243732139211:order-events-topic",
+        "Protocol": "sqs"
+      }
+    },
+    "SQSQueueEmailqueue": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::SQS::Queue",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "SqsManagedSseEnabled": true,
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "DelaySeconds": 0,
+        "RedrivePolicy": {
+          "deadLetterTargetArn": "arn:aws:sqs:us-east-1:243732139211:email-dlq",
+          "maxReceiveCount": 3
+        },
+        "MessageRetentionPeriod": 345600,
+        "MaximumMessageSize": 1048576,
+        "VisibilityTimeout": 30,
+        "QueueName": "email-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ]
+      }
+    },
+    "CloudWatchAlarmEmaildlqalert": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::CloudWatch::Alarm",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "TreatMissingData": "notBreaching",
+        "Dimensions": [
+          {
+            "Value": "email-dlq",
+            "Name": "QueueName"
+          }
+        ],
+        "Period": 60,
+        "EvaluationPeriods": 1,
+        "Namespace": "AWS/SQS",
+        "OKActions": [],
+        "AlarmActions": [
+          "arn:aws:sns:us-east-1:243732139211:consumer-dql-alert"
+        ],
+        "MetricName": "ApproximateNumberOfMessagesVisible",
+        "ActionsEnabled": true,
+        "AlarmDescription": "email-dlq has message",
+        "AlarmName": "email-dlq-alert",
+        "Statistic": "Sum",
+        "InsufficientDataActions": [],
+        "DatapointsToAlarm": 1,
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Threshold": 1
+      }
+    },
+    "LambdaEventSourceMappingSr": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "BatchSize": 1,
+        "FunctionName": "arn:aws:lambda:us-east-1:243732139211:function:inventory-consumer",
+        "ScalingConfig": {
+          "MaximumConcurrency": 3
+        },
+        "Enabled": true,
+        "EventSourceArn": "arn:aws:sqs:us-east-1:243732139211:inventory-queue",
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "MetricsConfig": {
+          "Metrics": []
+        },
+        "MaximumBatchingWindowInSeconds": 0
+      }
+    },
+    "LambdaFunctionEmailconsumer": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::Lambda::Function",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "MemorySize": 128,
+        "Description": "",
+        "TracingConfig": {
+          "Mode": "PassThrough"
+        },
+        "Timeout": 3,
+        "RuntimeManagementConfig": {
+          "UpdateRuntimeOn": "Auto"
+        },
+        "Handler": "lambda_function.lambda_handler",
+        "Code": {
+          "SourceKMSKeyArn": {
+            "Ref": "LambdaFunctionEmailconsumerCodeSourceKMSKeyArnoJVt8"
+          },
+          "S3ObjectVersion": {
+            "Ref": "LambdaFunctionEmailconsumerCodeS3ObjectVersion6rY1a"
+          },
+          "S3Bucket": {
+            "Ref": "LambdaFunctionEmailconsumerCodeS3BucketyufOh"
+          },
+          "ZipFile": {
+            "Ref": "LambdaFunctionEmailconsumerCodeZipFile9M8aa"
+          },
+          "S3Key": {
+            "Ref": "LambdaFunctionEmailconsumerCodeS3KeyIFKxR"
+          },
+          "S3ObjectStorageMode": {
+            "Ref": "LambdaFunctionEmailconsumerCodeS3ObjectStorageModeCp9Ib"
+          },
+          "ImageUri": {
+            "Ref": "LambdaFunctionEmailconsumerCodeImageUriNwuV3"
+          }
+        },
+        "Role": "arn:aws:iam::243732139211:role/LabRole",
+        "FileSystemConfigs": [],
+        "FunctionName": "email-consumer",
+        "Runtime": "python3.14",
+        "PackageType": "Zip",
+        "LoggingConfig": {
+          "LogFormat": "Text",
+          "LogGroup": "/aws/lambda/email-consumer"
+        },
+        "RecursiveLoop": "Terminate",
+        "EphemeralStorage": {
+          "Size": 512
+        },
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Architectures": [
+          "x86_64"
+        ]
+      }
+    },
+    "CloudWatchAlarmPaymentdlqalert": {
+      "UpdateReplacePolicy": "Delete",
+      "Type": "AWS::CloudWatch::Alarm",
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "TreatMissingData": "notBreaching",
+        "Dimensions": [
+          {
+            "Value": "payment-dlq",
+            "Name": "QueueName"
+          }
+        ],
+        "Period": 60,
+        "EvaluationPeriods": 1,
+        "Namespace": "AWS/SQS",
+        "OKActions": [],
+        "AlarmActions": [
+          "arn:aws:sns:us-east-1:243732139211:consumer-dql-alert"
+        ],
+        "MetricName": "ApproximateNumberOfMessagesVisible",
+        "ActionsEnabled": true,
+        "AlarmDescription": "payment-dlq has message",
+        "AlarmName": "payment-dlq-alert",
+        "Statistic": "Sum",
+        "InsufficientDataActions": [],
+        "DatapointsToAlarm": 1,
+        "Tags": [
+          {
+            "Value": "fanout-sns-sqs",
+            "Key": "Project"
+          },
+          {
+            "Value": "24110283-BDPL",
+            "Key": "Owner"
+          }
+        ],
+        "Threshold": 1
+      }
+    }
+  }
+}

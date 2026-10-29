@@ -1,4 +1,10 @@
 import json
+import boto3
+from datetime import datetime
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('order-processing-table')
+CONSUMER_NAME = 'email-consumer'
 
 def lambda_handler(event, context):
     for record in event['Records']:
@@ -33,6 +39,18 @@ def lambda_handler(event, context):
         elif event_type == "ORDER_SHIPPED":
             print(f"[EMAIL_ORDER_SHIPPED] eventId: {event_id} | orderId: {order_id}")
             print(f"Send email to [{customer}]: Order {order_id} is in shipping")
+
+        try:
+            now = datetime.now()
+            table.put_item(
+                Item={
+                    'eventId': event_id,
+                    'consumer': CONSUMER_NAME,
+                    'processedAt': now.strftime("%d/%m/%Y %H:%M:%S")
+                }
+            )
+        except:
+            raise
 
     return {
         'statusCode': 200,
