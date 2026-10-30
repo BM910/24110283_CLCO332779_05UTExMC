@@ -74,56 +74,37 @@ Owner = 24110283-BDPL
 ```
 
 ## 3. Vẽ sơ đồ
-![alt text](draw_so_do.jpg)
+
+![Sơ đồ](../architecture/so_do.png)
 
 ## 4. Dựng nền tảng
 ### Tạo order-events-topic
 #### Amazon SNS > Topics > Create topic
 - Type: standard
 - Name: order-events-topic
-- Tags:
-```
-Project = fanout-sns-sqs
-Owner = 24110283-BDPL
-```
+- Tags: `Project = fanout-sns-sqs` `Owner = 24110283-BDPL`
 
-- Kết quả tạo được một topic có ARN: `arn:aws:sns:us-east-1:243732139211:order-events-topic`
-
-![alt text](create_topic.png)
+![Tạo topic](create_topic.png)
 
 ### Tạo inventory-queue, payment-queue, email-queue
 #### Amazon SQS > Queues > Create queue
 - Type: Standard
 - Name: inventory-queue, payment-queue, email-queue
-- Tags:
-```
-Project = fanout-sns-sqs
-Owner = 24110283-BDPL
-```
+- Tags: `Project = fanout-sns-sqs` `Owner = 24110283-BDPL`
 
-- Kết quả tạo được 3 queue có tên lần lượt inventory-queue, payment-queue, email-queue và có ARN:
-```
-arn:aws:sqs:us-east-1:243732139211:inventory-queue
-arn:aws:sqs:us-east-1:243732139211:payment-queue
-arn:aws:sqs:us-east-1:243732139211:email-queue
-```
+- Kết quả tạo được 3 queue có tên lần lượt inventory-queue, payment-queue, email-queue
 
-![alt text](create_queue.png)
+![Tạo queue](create_queue.png)
 
 ### Tạo subscription cho các queue
 #### Amazon SNS > Topics > order-events-topic > Create subscription
-- Topic ARN: `arn:aws:sns:us-east-1:243732139211:order-events-topic`
+- Topic ARN: chọn ARN của order-events-topic
 - Protocol: Amazon SQS
-- Endpoint:
-```
-arn:aws:sqs:us-east-1:243732139211:inventory-queue
-arn:aws:sqs:us-east-1:243732139211:payment-queue
-arn:aws:sqs:us-east-1:243732139211:email-queue
-```
+- Endpoint: chọn ARN của các queue tương ứng
 
 - Kết quả tạo được ba subscription có topic là order-events-topic và endpoint là ba queue inventory-queue, payment-queue, email-queue
 
-![alt text](create_subscription.png)
+![Tạo subscription](create_subscription.png)
 
 ### Kiểm tra
 #### Publish tin nhắn
@@ -142,17 +123,17 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 
 - Kết quả Publish tin nhắn thành công
 
-![alt text](publish_message_success.png)
+![Publish tin nhắn](publish_message_success.png)
 
 #### Nhận tin nhắn
 #### Amazon SQS > Queues > inventory-queue, payment-queue, email-queue > Send and receive messages
 - Kiểm tra thấy cả ba queue nhận được tin nhắn thành công
 
-![alt text](receive_message_inventory_queue.png)
+![Nhận tin nhắn](receive_message_inventory_queue.png)
 
 - Nội dung đúng với tin nhắn đã publish
 
-![alt text](receive_message_body.png)
+![Nội dung tin nhắn](receive_message_body.png)
 
 ### Tạo filter
 #### Amazon SNS > Subscription > Chọn subcription tương ứng > Edit
@@ -184,7 +165,7 @@ arn:aws:sqs:us-east-1:243732139211:email-queue
 - inventory-queue có 2 tin nhắn
 - payment-queue có 1 tin nhắn
 
-![alt text](receive_message_filter_queue_list.png)
+![Filter hoạt động](receive_message_filter_queue_list.png)
 
 ## Links
 - Repo: https://github.com/BM910/24110283_CLCO332779_05UTExMC

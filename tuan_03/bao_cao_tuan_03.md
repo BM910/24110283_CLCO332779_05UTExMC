@@ -84,7 +84,7 @@
     - Thời điểm xử lý `processAt = now.strftime("%d/%m/%Y %H:%M:%S")` có dạng ngày/tháng/năm giờ/phút/giây
 
 ### Kiểm tra bảo mật queue
-- inventory-queue/payment-queue/email-queue access policy: Chỉ nhận tin nhắn từ order-event-topic `"aws:SourceArn": "arn:aws:sns:us-east-1:243732139211:order-events-topic"`
+- inventory-queue/payment-queue/email-queue access policy: Chỉ nhận tin nhắn từ order-events-topic `"aws:SourceArn": "arn:aws:sns:us-east-1:243732139211:order-events-topic"`
 - Bật mã hóa
     - Server-side encryption: Enabled
     - Encryption key type: Amazon SQS key (SSE-SQS)

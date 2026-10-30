@@ -23,11 +23,7 @@
 - Type: Standard
 - Name: inventory-dlq/payment-dlq/email-dlq
 - Access policy: Basic
-- Tags:
-```
-Project = fanout-sns-sqs
-Owner = 24110283-BDPL
-```
+- Tags: `Project = fanout-sns-sqs` `Owner = 24110283-BDPL`
 
 #### Amazon SQS > Queues > inventory-queue/payment-queue/email-queue > Edit
 - Dead-letter queue: Enable
@@ -44,18 +40,18 @@ Owner = 24110283-BDPL
 - Custom execution role: LabRole
 - Tags: `Project = fanout-sns-sqs` `Owner = 24110283-BDPL`
 
-![alt text](create_event_functions.png)
+![Tạo event function](create_event_functions.png)
 
 #### Config Event Functions
 #### Lambda > Event Functions > inventory-consumer/payment-consumer/email-consumer
 - Code: Dán đoạn code tương ứng vào và Deploy
 
-![alt text](config_event_function_code.png)
+![Cài đặt event function](config_event_function_code.png)
 
 - Add triggers: `Source: SQS` `SQS queue: inventory-queue/payment-queue/email-queue` `Batch size: 1` `Maximum concurrency: 3`
 - Gắn hàm lambda vào queue tương ứng và sẽ hàm sẽ được gọi khi queue có tin nhắn
 
-![alt text](config_event_source_mapping.png)
+![Cài đặt trigger](config_event_source_mapping.png)
 
 - Tags: `Project = fanout-sns-sqs` `Owner = 24110283-BDPL`
 
@@ -79,13 +75,13 @@ Owner = 24110283-BDPL
 
 #### CloudWatch > Log management
 #### inventory-consumer
-![alt text](log_inventory_01.png)
+![Log](log_inventory_01.png)
 
 #### payment-consumer
-![alt text](log_payment_01.png)
+![Log](log_payment_01.png)
 
 #### email-consumer
-![alt text](log_email_01.png)
+![Log](log_email_01.png)
 
 ### Test 02
 - Publish tin nhắn với attribute `String eventType ORDER_CANCELLED`
@@ -106,13 +102,13 @@ Owner = 24110283-BDPL
 
 #### CloudWatch > Log management
 #### inventory-consumer
-![alt text](log_inventory_02.png)
+![Log](log_inventory_02.png)
 
 #### payment-consumer
-![alt text](log_payment_02.png)
+![Log](log_payment_02.png)
 
 #### email-consumer
-![alt text](log_email_02.png)
+![Log](log_email_02.png)
 
 ### Test 03
 - Publish tin nhắn với attribute `String eventType ORDER_CREATED` `String paymentMethod CARD`
@@ -133,25 +129,25 @@ Owner = 24110283-BDPL
 
 - Sau khi publish, các tin nhắn kẹt ở `Messages in flight` vì lambda xử lý bị lỗi
 
-![alt text](view_queue_01.png)
+![Tin nhắn ở queue](view_queue_01.png)
 
 - Sau 3 lần không thành công ở mỗi queue, các tin nhắn bị đưa về dead letter queue
 
-![alt text](view_queue_02.png)
+![Tin nhắn ở queue](view_queue_02.png)
 
 - Error metric cho thấy 3 event function gặp lỗi tổng 9 lần
 
-![alt text](metric_test_03.png)
+![Đo metric](metric_test_03.png)
 
 #### CloudWatch > Log management
 #### inventory-consumer
-![alt text](log_inventory_03.png)
+![Log](log_inventory_03.png)
 
 #### payment-consumer
-![alt text](log_payment_03.png)
+![Log](log_payment_03.png)
 
 #### email-consumer
-![alt text](log_email_03.png)
+![Log](log_email_03.png)
 
 ## Links
 - [Repo](https://github.com/BM910/24110283_CLCO332779_05UTExMC)
